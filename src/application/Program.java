@@ -12,17 +12,19 @@ public class Program {
 	public static void main(String[] args) {
 		
 		SellerDao sellerDao = DaoFactory.createSellerDao();
-		
-		Department department = new Department(2, null);
-		Seller seller = sellerDao.findById(3);
-		
-		List<Seller> list = sellerDao.findByDepartment(department);
-		
+			
 		System.out.println("FindById test");
+		Seller seller = sellerDao.findById(3);
 		System.out.println(seller);
 		
 		System.out.println("\nFindByDepartment test");
+		Department department = new Department(2, null);
+		List<Seller> list = sellerDao.findByDepartment(department);
 		list.forEach(System.out::println);
+		
+		System.out.println("\nFindAll test");
+		List<Seller> listAll = sellerDao.findAll();
+		listAll.forEach(System.out::println);
 	}
 
 }
