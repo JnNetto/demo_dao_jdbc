@@ -1,5 +1,6 @@
 package application;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,25 +29,27 @@ public class Program {
 		List<Seller> listAll = sellerDao.findAll();
 		listAll.forEach(System.out::println);
 		
-		/*
+		
 		System.out.println("\nInsert test");
 		Seller newSeller = new Seller(null, "João", "joao@gmail.com", new Date(), 5000.0, department);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id: " + newSeller.getId());
-		*/
 		
-		/*
+		
+		
 		System.out.println("\nupdate test");
-		seller = sellerDao.findById(7);
+		seller = sellerDao.findById(9);
 		seller.setName("João White");
 		sellerDao.update(seller);
 		System.out.println("Update completed!");
-		*/
+		
 		
 		System.out.println("\ndeleteById test");
 		System.out.print("Enter Id for delete: ");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
+		
+		sc.close();
 	}
 
 }
